@@ -24,22 +24,35 @@ namespace Prueba1908
         {
             //Paso 0: Condición de vacío
             if (textBox1.Text.Equals("") ||
-                    textBox2.Text.Equals(""))
+                    textBox2.Text.Equals("") ||
+                        textBox3.Text.Equals("") ||
+                            textBox4.Text.Equals(""))
             {
                 MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
                 return;
             }
             //Paso1: Inicialización de parámetros
-            int totalValores = Convert.ToInt32(textBox1.Text);
-            int valorMuestra = Convert.ToInt32(textBox2.Text);
+            int a = Convert.ToInt32(textBox1.Text);
+            int c = Convert.ToInt32(textBox2.Text);
+            int m = Convert.ToInt32(textBox4.Text);
+            int x0 = Convert.ToInt32(textBox3.Text);
+            //Paso 1.2 condicion para x0
+            if (a <= 0 || c <= 0 || x0 <= 0)
+            {
+                MessageBox.Show("Los valores a, c, x0 deben de ser mayores o iguales que CERO.");
+                return;
+            }
+            if (m <= a || m <= c || m <= x0)
+            {
+                MessageBox.Show("m debe de ser mayor a todos los demás parámetros.");
+                return;
+            }
             //Paso 2: Declarar clase algoritmo genético
             AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
             //Paso 3: Llamar método principal
-            List<int> listaEnteros = algoritmo.GeneradorValores(totalValores);
+            List<int> listaEnteros = algoritmo.GeneradorCongruencial(a, c, m, x0);
             // Paso 4: Llenar el grid 
             llenarGrid(listaEnteros);
-
-
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -88,6 +101,11 @@ namespace Prueba1908
             }
             //Paso 3: visibilidad
             exportarExcel.Visible = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
