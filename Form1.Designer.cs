@@ -39,6 +39,10 @@
             textBox4 = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -137,11 +141,50 @@
             label4.TabIndex = 7;
             label4.Text = "m";
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(380, 112);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(125, 27);
+            textBox5.TabIndex = 14;
+            textBox5.TextChanged += textBox5_TextChanged;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(380, 151);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(125, 27);
+            textBox6.TabIndex = 13;
+            textBox6.TextChanged += textBox6_TextChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(341, 115);
+            label5.Name = "label5";
+            label5.Size = new Size(17, 20);
+            label5.TabIndex = 12;
+            label5.Text = "n";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(341, 151);
+            label6.Name = "label6";
+            label6.Size = new Size(24, 20);
+            label6.TabIndex = 11;
+            label6.Text = "x1";
+            label6.Click += label6_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox5);
+            Controls.Add(textBox6);
+            Controls.Add(label5);
+            Controls.Add(label6);
             Controls.Add(textBox3);
             Controls.Add(textBox4);
             Controls.Add(label3);
@@ -174,5 +217,9 @@
         private TextBox textBox4;
         private Label label3;
         private Label label4;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private Label label5;
+        private Label label6;
     }
 }
