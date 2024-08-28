@@ -43,6 +43,10 @@
             textBox6 = new TextBox();
             label5 = new Label();
             label6 = new Label();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -81,11 +85,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(550, 42);
+            button1.Location = new Point(550, 11);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(183, 29);
             button1.TabIndex = 4;
-            button1.Text = "Ejecutar algoritmo";
+            button1.Text = "Congruencial";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -176,11 +180,55 @@
             label6.Text = "x1";
             label6.Click += label6_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(550, 46);
+            button3.Name = "button3";
+            button3.Size = new Size(183, 29);
+            button3.TabIndex = 15;
+            button3.Text = "Congruencial NL";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(550, 81);
+            button4.Name = "button4";
+            button4.Size = new Size(183, 29);
+            button4.TabIndex = 16;
+            button4.Text = "Punto medio";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(550, 116);
+            button5.Name = "button5";
+            button5.Size = new Size(183, 29);
+            button5.TabIndex = 17;
+            button5.Text = "Cuadrado medio";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(550, 150);
+            button6.Name = "button6";
+            button6.Size = new Size(183, 29);
+            button6.TabIndex = 18;
+            button6.Text = "Producto Medio";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(textBox5);
             Controls.Add(textBox6);
             Controls.Add(label5);
@@ -221,5 +269,9 @@
         private TextBox textBox6;
         private Label label5;
         private Label label6;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
     }
 }

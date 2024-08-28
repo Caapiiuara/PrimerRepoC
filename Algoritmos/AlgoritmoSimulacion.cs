@@ -12,17 +12,6 @@ namespace Prueba1908.Algoritmos
     {
         //public List<Gen> GeneradorValores(int poblacion, double probCruce)
 
-        public List<int> GeneradorValores(int n)
-        {
-            List<int> listaSalida = new List<int>();
-            for (int i = 0; i < n; i++)
-            {
-                listaSalida.Add(5 * (i + 1));
-            }
-
-            return listaSalida;
-        }
-
         public List<int> GeneradorCongruencial(int a, int c, int m, int x0)
         {
             List<int> listaSalida = new List<int>();

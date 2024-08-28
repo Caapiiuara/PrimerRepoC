@@ -26,9 +26,7 @@ namespace Prueba1908
             if (textBox1.Text.Equals("") ||
                     textBox2.Text.Equals("") ||
                         textBox3.Text.Equals("") ||
-                            textBox4.Text.Equals("") ||
-                                textBox5.Text.Equals("") ||
-                                    textBox6.Text.Equals(""))
+                            textBox4.Text.Equals(""))
             {
                 MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
                 return;
@@ -38,13 +36,11 @@ namespace Prueba1908
             int c = Convert.ToInt32(textBox2.Text);
             int m = Convert.ToInt32(textBox4.Text);
             int x0 = Convert.ToInt32(textBox3.Text);
-            int n = Convert.ToInt32(textBox5.Text);
-            int x1 = Convert.ToInt32(textBox6.Text);
 
             //Paso 1.2 condicion para x0
-            if (a <= 0 || c <= 0 || x0 <= 0 || n <= 0 || x1 <=0)
+            if (a <= 0 || c <= 0 || x0 <= 0)
             {
-                MessageBox.Show("Los valores a, c, x0, n y x1 deben de ser mayores o iguales que CERO.");
+                MessageBox.Show("Los valores a, c y x0 deben de ser mayores o iguales que CERO.");
                 return;
             }
             if (m <= a || m <= c || m <= x0)
@@ -56,7 +52,7 @@ namespace Prueba1908
             AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
             //Paso 3: Llamar método principal
             //List<int> listaEnteros = algoritmo.GeneradorCongruencialnoLineal(a, c, m, x0);
-            List<int> listaEnteros = algoritmo.GeneradorCuadradoMedio(n, x0);
+            List<int> listaEnteros = algoritmo.GeneradorCongruencial(a,c,m,x0);
             // Paso 4: Llenar el grid 
             llenarGrid(listaEnteros);
         }
@@ -127,6 +123,139 @@ namespace Prueba1908
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Paso 0: Condición de vacío
+            if (textBox1.Text.Equals("") ||
+                    textBox2.Text.Equals("") ||
+                        textBox3.Text.Equals("") ||
+                            textBox4.Text.Equals(""))
+            {
+                MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
+                return;
+            }
+            //Paso1: Inicialización de parámetros
+            int a = Convert.ToInt32(textBox1.Text);
+            int c = Convert.ToInt32(textBox2.Text);
+            int m = Convert.ToInt32(textBox4.Text);
+            int x0 = Convert.ToInt32(textBox3.Text);
+
+            //Paso 1.2 condicion para x0
+            if (a <= 0 || c <= 0 || x0 <= 0)
+            {
+                MessageBox.Show("Los valores a, c, x0, n y x1 deben de ser mayores o iguales que CERO.");
+                return;
+            }
+            if (m <= a || m <= c || m <= x0)
+            {
+                MessageBox.Show("m debe de ser mayor a todos los demás parámetros.");
+                return;
+            }
+            //Paso 2: Declarar clase algoritmo genético
+            AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
+            //Paso 3: Llamar método principal
+            //List<int> listaEnteros = algoritmo.GeneradorCongruencialnoLineal(a, c, m, x0);
+            List<int> listaEnteros = algoritmo.GeneradorCongruencialnoLineal(a,c,m,x0);
+            // Paso 4: Llenar el grid 
+            llenarGrid(listaEnteros);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Paso 0: Condición de vacío
+            if (textBox1.Text.Equals("") ||
+                    textBox2.Text.Equals("") ||
+                        textBox3.Text.Equals("") ||
+                            textBox4.Text.Equals(""))
+            {
+                MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
+                return;
+            }
+            //Paso1: Inicialización de parámetros
+            int a = Convert.ToInt32(textBox1.Text);
+            int c = Convert.ToInt32(textBox2.Text);
+            int m = Convert.ToInt32(textBox4.Text);
+            int x0 = Convert.ToInt32(textBox3.Text);
+
+            //Paso 1.2 condicion para x0
+            if (a <= 0 || c <= 0 || x0 <= 0)
+            {
+                MessageBox.Show("Los valores a, c, x0, n y x1 deben de ser mayores o iguales que CERO.");
+                return;
+            }
+            if (m <= a || m <= c || m <= x0)
+            {
+                MessageBox.Show("m debe de ser mayor a todos los demás parámetros.");
+                return;
+            }
+            //Paso 2: Declarar clase algoritmo genético
+            AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
+            //Paso 3: Llamar método principal
+            //List<int> listaEnteros = algoritmo.GeneradorCongruencialnoLineal(a, c, m, x0);
+            List<int> listaEnteros = algoritmo.GeneradorPuntoMedio(a,c,m,x0);
+            // Paso 4: Llenar el grid 
+            llenarGrid(listaEnteros);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //Paso 0: Condición de vacío
+            if (textBox3.Text.Equals("") ||
+                                textBox5.Text.Equals(""))
+            {
+                MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
+                return;
+            }
+            //Paso1: Inicialización de parámetros
+            int x0 = Convert.ToInt32(textBox3.Text);
+            int n = Convert.ToInt32(textBox5.Text);
+
+            //Paso 1.2 condicion para x0
+            if (x0 <= 0 || n <= 0)
+            {
+                MessageBox.Show("Los valores x0 y n deben de ser mayores o iguales que CERO.");
+                return;
+            }
+            //Paso 2: Declarar clase algoritmo genético
+            AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
+            //Paso 3: Llamar método principal
+            //List<int> listaEnteros = algoritmo.GeneradorCongruencialnoLineal(a, c, m, x0);
+            List<int> listaEnteros = algoritmo.GeneradorCuadradoMedio(n, x0);
+            // Paso 4: Llenar el grid 
+            llenarGrid(listaEnteros);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Paso 0: Condición de vacío
+            if (textBox3.Text.Equals("") ||
+                                textBox5.Text.Equals("") ||
+                                    textBox6.Text.Equals(""))
+            {
+                MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
+                return;
+            }
+            //Paso1: Inicialización de parámetros
+            int x0 = Convert.ToInt32(textBox3.Text);
+            int n = Convert.ToInt32(textBox5.Text);
+            int x1 = Convert.ToInt32(textBox6.Text);
+
+            //Paso 1.2 condicion para x0
+            if (x0 <= 0 || n <= 0 || x1 <= 0)
+            {
+                MessageBox.Show("Los valores x0, n y x1 deben de ser mayores o iguales que CERO.");
+                return;
+            }
+            //Paso 2: Declarar clase algoritmo genético
+            AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
+            //Paso 3: Llamar método principal
+            //List<int> listaEnteros = algoritmo.GeneradorCongruencialnoLineal(a, c, m, x0);
+            List<int> listaEnteros = algoritmo.GeneradorProductoMedio(n, x0, x1);
+            // Paso 4: Llenar el grid 
+            llenarGrid(listaEnteros);
         }
     }
 }
