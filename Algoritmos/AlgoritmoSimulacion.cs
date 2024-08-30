@@ -35,13 +35,15 @@ namespace Prueba1908.Algoritmos
                 xi = (a * xi + c) % m;
                 if (!listaSalida.Contains(xi))
                 {
-                    listaSalida.Add((xi + 1) % m);
+                    listaSalida.Add(xi);
                 }
                 else
                 {
+                    MessageBox.Show("m debe de ser un numero primo");
                     entra = false;
                 }
             }
+            MessageBox.Show("La serie ha repetido un número y se ha finalizado.");
             return listaSalida;
         }
         public List<int> GeneradorCongruencialnoLineal(int a, int c, int m, int x0)
@@ -71,6 +73,7 @@ namespace Prueba1908.Algoritmos
                 }
                 else
                 {
+                    MessageBox.Show("m debe de ser un numero primo");
                     entra = false;
                 }
             }
@@ -103,6 +106,7 @@ namespace Prueba1908.Algoritmos
                 }
                 else
                 {
+                    MessageBox.Show("m debe de ser un numero primo");
                     entra = false;
                 }
             }
@@ -138,6 +142,7 @@ namespace Prueba1908.Algoritmos
                 }
                 else
                 {
+                    MessageBox.Show("m debe de ser un numero primo");
                     corre = false;
                 }
 
